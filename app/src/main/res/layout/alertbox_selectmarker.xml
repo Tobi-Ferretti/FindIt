@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_gravity="center"
+    android:layout_height="500dp"
+    android:background="@drawable/bg_white_rounded">
+    <ImageButton
+        android:id="@+id/mapWindowcloseGoogleInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_baseline_close_24"
+        android:backgroundTint="#00FFFFFF"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/mapWindowcloseGoogleInfo"
+        android:layout_marginLeft="-39dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/google_2015_logo_svg"/>
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/alertmap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mapWindowcloseGoogleInfo"
+        android:layout_margin="15dp"
+        tools:context="com.FindIt.finditpflanzenfinden.NewMarkerActivity" />
+    <ImageButton
+        android:id="@+id/confirmLoc"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignBottom="@+id/alertmap"
+        android:layout_alignEnd="@+id/alertmap"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn_shape"
+        android:src="@drawable/ic_baseline_check_24"
+        android:drawablePadding="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_gravity="center"/>
+
+</RelativeLayout>

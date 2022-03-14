@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_gradient"
+        android:gravity="center"/>
+    <item android:gravity="center"
+        android:drawable="@drawable/bg_circle"
+        android:width="200dp"
+        android:height="200dp"/>
+
+    <item android:gravity="center"
+        android:drawable="@drawable/ture_love_world_map_environment_512" />
+
+
+    <item
+        android:top="500dp"
+        android:width="250dp"
+        android:left="80dp"
+        android:gravity="center_vertical"
+        android:drawable="@drawable/_1eed17bf68e91e633623d523c33a81ae" />
+
+</layer-list>

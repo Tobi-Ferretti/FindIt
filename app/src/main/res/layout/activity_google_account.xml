@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_white_rounded">
+    <ImageButton
+        android:id="@+id/closeGoogleInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_baseline_close_24"
+        android:backgroundTint="#00FFFFFF"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/closeGoogleInfo"
+        android:layout_marginLeft="-39dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/google_2015_logo_svg"/>
+    <ImageView
+        android:id="@+id/accountImage"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@+id/closeGoogleInfo"
+        android:layout_margin="15dp"/>
+    <TextView
+        android:id="@+id/accountName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/accountImage"
+        android:layout_below="@+id/closeGoogleInfo"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-black"/>
+    <TextView
+        android:id="@+id/accountEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountName"
+        android:layout_toRightOf="@id/accountImage"
+        android:fontFamily="sans-serif-light"/>
+    <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:cornerRadius="50dp"
+        android:id="@+id/accoutLogOutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/accountImage"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/accountEmail"
+        android:text="Abmelden"
+        android:textColor="?attr/colorError"
+        app:strokeColor="?attr/colorError"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="false"
+        app:rippleColor="?attr/colorControlNormal" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/driveChecked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accoutLogOutBtn"
+        android:layout_marginStart="15dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/driveChecked"
+        android:layout_below="@id/accoutLogOutBtn"
+        android:text="Sync mit Drive"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="10dp"/>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_below="@id/driveChecked">
+
+        <RadioButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio1"
+            android:text="eigenen Drive verwenden"
+            android:paddingStart="10dp"
+            android:fontFamily="sans-serif-light"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <ImageButton
+                android:id="@+id/shareDriveLink_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_content_copy_24"
+                android:backgroundTint="#00FFFFFF"
+                android:layout_marginStart="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+            <TextView
+                android:id="@+id/linkText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_toEndOf="@+id/shareDriveLink_Btn"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:background="#25BFBFBF"/>
+        </RelativeLayout>
+
+        <RadioButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio2"
+            android:paddingStart="10dp"
+            android:text="fremden Drive verwenden"
+            android:fontFamily="sans-serif-light"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <ImageButton
+                android:id="@+id/deleteShared"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="40dp"
+                android:src="@drawable/ic_baseline_close_24"
+                android:backgroundTint="#00FFFFFF"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+        <ImageView
+            android:id="@+id/sharedaccountImage"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/deleteShared" />
+        <TextView
+            android:id="@+id/sharedaccountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/sharedaccountImage"
+            android:fontFamily="sans-serif-black"
+            android:textSize="10sp"/>
+        <TextView
+            android:id="@+id/sharedaccountEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sharedaccountName"
+            android:layout_toEndOf="@id/sharedaccountImage"
+            android:fontFamily="sans-serif-light"
+            android:textSize="8sp"/>
+
+            <TextView
+                android:id="@+id/sharedaccountRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sharedaccountImage"
+                android:layout_toEndOf="@id/deleteShared"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-light"
+                android:drawableLeft="@drawable/ic_outline_info_24"
+                android:drawablePadding="5dp"
+               android:drawableTint="@color/teal_200" />
+
+        </RelativeLayout>
+    </RadioGroup>
+    <EditText
+        android:id="@+id/inputDriveLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroup"
+        android:hint="Freigegebner Link"
+        android:layout_marginStart="15dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColorHint="?attr/colorControlNormal"/>
+
+    <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:cornerRadius="50dp"
+        android:id="@+id/confirmDriveLink_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/inputDriveLink"
+        android:text="Speichern"
+        android:textColor="?attr/colorSecondary"
+        app:strokeColor="?attr/colorSecondary"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="false"
+        app:rippleColor="?attr/colorSecondary" />
+
+</RelativeLayout>
