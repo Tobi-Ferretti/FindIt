@@ -19,7 +19,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -135,6 +137,8 @@ public class NewMarkerActivity extends AppCompatActivity implements OnMapReadyCa
         addPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                listView.setVisibility(View.GONE);
+                categorySpinner.setEnabled(true);
                 AlertDialog.Builder builder = new AlertDialog.Builder(NewMarkerActivity.this);
                 builder.setTitle("Bild einfügen mit");
                 builder.setItems(imageSelector, new DialogInterface.OnClickListener() {
@@ -231,6 +235,8 @@ public class NewMarkerActivity extends AppCompatActivity implements OnMapReadyCa
         harvestDateRangeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                listView.setVisibility(View.GONE);
+                categorySpinner.setEnabled(true);
                 materialDatePicker.show(getSupportFragmentManager(), "DATE_PICKER");
             }
         });
@@ -264,6 +270,8 @@ public class NewMarkerActivity extends AppCompatActivity implements OnMapReadyCa
         locationModeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                listView.setVisibility(View.GONE);
+                categorySpinner.setEnabled(true);
                 AlertDialog.Builder builder = new AlertDialog.Builder(NewMarkerActivity.this);
                 builder.setTitle("Standort Modus festlegen..");
                 builder.setItems(locationModeSelector, new DialogInterface.OnClickListener() {
@@ -320,7 +328,6 @@ public class NewMarkerActivity extends AppCompatActivity implements OnMapReadyCa
             @Override
             public void onClick(View view) {
                 int colorNormal=objectName.getCurrentHintTextColor();
-                if (plantPicture.getDrawable()!=null) {
                     if (objectName.getText().toString().trim().length() > 0 || !objectName.getText().toString().equals("")) {
                         objectName.setHintTextColor(colorNormal);
                         if (!categorySpinner.getSelectedItem().toString().equals("Kategorie zuordnen..")) {
@@ -328,8 +335,22 @@ public class NewMarkerActivity extends AppCompatActivity implements OnMapReadyCa
                             if (!harvestDateRangeLabel.getText().equals("Erntezeit")) {
                                 harvestDateRangeLabel.setTextColor(colorNormal);
                                 if (longitude!=0 || latitude!=0) {
+                                    if (plantPicture.getDrawable()==null) {
+                                        Drawable drawable= getApplicationContext().getDrawable(R.drawable.ic_baseline_camera_alt_24);
+                                        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
+                                                drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+                                        Canvas canvas = new Canvas(bitmap);
+                                        drawable.setBounds(15, 20, canvas.getWidth() -5, canvas.getHeight()-20);
+                                        drawable.draw(canvas);
+                                        addPicture.setVisibility(View.INVISIBLE);
+                                        plantPicture.setImageBitmap(bitmap);
+                                        plantItem = new PlantItem(plantPicture.getDrawable(), objectName.getText().toString(), categorySpinner.getSelectedItem().toString(), rangeDate, latitude, longitude, noticeLabel.getText().toString(), describtionLabel.getText().toString(), gName, gImage);
+
+                                    }else {
+                                        plantItem = new PlantItem(plantPicture.getDrawable(), objectName.getText().toString(), categorySpinner.getSelectedItem().toString(), rangeDate, latitude, longitude, noticeLabel.getText().toString(), describtionLabel.getText().toString(), gName, gImage);
+
+                                    }
                                     locationModeLabel.setTextColor(colorNormal);
-                                    plantItem = new PlantItem(plantPicture.getDrawable(), objectName.getText().toString(), categorySpinner.getSelectedItem().toString(), rangeDate, latitude, longitude, noticeLabel.getText().toString(), describtionLabel.getText().toString(), gName, gImage);
                                     openMapsActivity();
                                 }else {
                                     locationModeLabel.setTextColor(getResources().getColor(R.color.design_default_color_error));
@@ -347,11 +368,6 @@ public class NewMarkerActivity extends AppCompatActivity implements OnMapReadyCa
                         errorTextView.setText("Nicht alle Pflichtfelder ausgefüllt! (Name)");
                         objectName.setHintTextColor(ColorStateList.valueOf(getResources().getColor(R.color.design_default_color_error)));
                     }
-                }else {
-                    errorTextView.setText("Nicht alle Pflichtfelder ausgefüllt! (Bild)");
-                    addPicture.setColorFilter(getResources().getColor(R.color.design_default_color_error),
-                            PorterDuff.Mode.SRC_ATOP);
-                }
             }
         });
     }

@@ -134,6 +134,8 @@ public class InfoActivity extends AppCompatActivity implements OnMapReadyCallbac
         editImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                listView.setVisibility(View.GONE);
+                categorySpinner.setEnabled(true);
                 AlertDialog.Builder builder = new AlertDialog.Builder(InfoActivity.this);
                 builder.setTitle("Bild einfügen mit");
                 builder.setItems(imageSelector, new DialogInterface.OnClickListener() {
@@ -290,6 +292,8 @@ public class InfoActivity extends AppCompatActivity implements OnMapReadyCallbac
         harvestDateRangeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                listView.setVisibility(View.GONE);
+                categorySpinner.setEnabled(true);
                 materialDatePicker.show(getSupportFragmentManager(), "DATE_PICKER");
             }
         });
@@ -327,6 +331,8 @@ public class InfoActivity extends AppCompatActivity implements OnMapReadyCallbac
         locationModeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                listView.setVisibility(View.GONE);
+                categorySpinner.setEnabled(true);
                 AlertDialog.Builder builder = new AlertDialog.Builder(InfoActivity.this);
                 builder.setTitle("Standort Modus festlegen..");
                 builder.setItems(locationModeSelector, new DialogInterface.OnClickListener() {

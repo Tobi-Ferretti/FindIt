@@ -5,6 +5,19 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android projects/FindItPflanzenfinden/app/src/main/res/drawable/ic_baseline_add_photo_alternate_24.xml" value="0.284" />
+        <entry key="..\:/android projects/FindItPflanzenfinden/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.284" />
+        <entry key="..\:/android projects/FindItPflanzenfinden/app/src/main/res/layout/activity_info.xml" value="0.1118421052631579" />
+        <entry key="..\:/android projects/FindItPflanzenfinden/app/src/main/res/layout/activity_maps.xml" value="0.17827868852459017" />
+        <entry key="..\:/android projects/FindItPflanzenfinden/app/src/main/res/layout/activity_more.xml" value="0.11005171299288946" />
+        <entry key="..\:/android projects/FindItPflanzenfinden/app/src/main/res/layout/activity_new_marker.xml" value="0.17827868852459017" />
+        <entry key="..\:/android projects/FindItPflanzenfinden/app/src/main/res/layout/marker_info.xml" value="0.1118421052631579" />
+      </map>
+    </option>
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />
     <option name="myDefaultNotNull" value="androidx.annotation.RecentlyNonNull" />
@@ -48,7 +61,7 @@
       </value>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
