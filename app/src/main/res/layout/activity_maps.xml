@@ -36,6 +36,12 @@
         app:searchIcon="@drawable/ic_baseline_location_on_24"
         app:closeIcon="@drawable/ic_baseline_close_24"
         android:animateLayoutChanges="true"/>
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimaryVariant" />
     <ImageButton
         android:id="@+id/googleAccount"
         android:layout_width="45dp"
@@ -47,12 +53,6 @@
         android:src="@drawable/ic_baseline_login_24"
         android:backgroundTint="?attr/colorPrimarySurface"
         android:onClick="openGoogleInfo"/>
-
-    <RelativeLayout
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/colorPrimaryVariant" />
     <TextView
         android:id="@+id/letzteSuche"
         android:layout_width="match_parent"
